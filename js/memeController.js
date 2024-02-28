@@ -15,42 +15,54 @@ function renderMeme() {
     elMemeEditorContainer.style.display = 'flex'
 
     let meme = getMeme()
+
+    console.log(meme.lines[0].txt); 
+    
+    
     const elImg = new Image()
     elImg.src = `img/${meme.selectedImgId}.jpg`
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(meme, 200, 50)
+        drawText(meme, 10, 40)
+        
+        
     }
 }
 
 function drawText(meme, x, y) {
     
-
+    
+    var text1Length = gCtx.measureText(`${meme.lines[meme.selectedLineIdx].txt}`).width
+    var text1Height = meme.lines[meme.selectedLineIdx].size
+    
     gCtx.beginPath()
     gCtx.lineWidth = 2
     gCtx.strokeStyle = `${meme.lines[0].color}`
-
+    
     gCtx.font = `${meme.lines[0].size}px Arial`
-    gCtx.textAlign = 'center'
-    gCtx.textBaseline = 'middle'
-
+  
     gCtx.fillText(meme.lines[0].txt, x, y)
     gCtx.strokeText(meme.lines[0].txt, x, y)
     gCtx.closePath()
-
+    if(!meme.selectedLineIdx){
+        gCtx.strokeRect( x, y - text1Height  ,  text1Length +x ,  y + 10)
+    }
+    
+    
     if (meme.lines.length > 1) {
         
         gCtx.beginPath()
         gCtx.lineWidth = 2
         gCtx.strokeStyle = `${meme.lines[1].color}`
-
+        
         gCtx.font = `${meme.lines[1].size}px Arial`
-        gCtx.textAlign = 'center'
-        gCtx.textBaseline = 'middle'
-
+        
         gCtx.fillText(meme.lines[1].txt, x, 250)
         gCtx.strokeText(meme.lines[1].txt, x, 250)
         gCtx.closePath()
+        if(meme.selectedLineIdx){
+            gCtx.strokeRect( x, 250 - text1Height  ,  text1Length +x ,  text1Height+10 )
+        }
     }
 
 
@@ -88,7 +100,7 @@ function onAddLineBtn() {
 }
 
 function onSwitchLineBtn() {
-    const elInput = document.getElementById('search')  
-   elInput.value = switchLine()
+    const elInput = document.getElementById('search')
+    elInput.value = switchLine()
 
 }
