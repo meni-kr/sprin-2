@@ -4,7 +4,7 @@
 
 canvas {
     display: block;
-    
+    border: 3px solid rgb(221, 54, 54);
 }
 
 .canvas-container{
