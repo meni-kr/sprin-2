@@ -1,20 +1,14 @@
 'use strict'
 
-let gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }]
+
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
-let gElCanvas
-let gCtx
+let gElCanvas= document.querySelector('canvas')
+let gCtx= gElCanvas.getContext('2d')
 
 
-function onInit() {
-     gElCanvas = document.querySelector('canvas')
-     gCtx = gElCanvas.getContext('2d')
-     renderMeme()
 
-    
-}
 
 function renderMeme() {
     let meme = getMeme()

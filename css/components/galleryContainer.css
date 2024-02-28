@@ -1,3 +1,14 @@
 .gallery-container{
-    display: none;
+    /* border: 3px solid black; */
+    grid-column: 1 / -1 ;
+    background-color: rgb(137, 167, 158);
+    display: flex;
+    flex-wrap: wrap;
 }
+
+
+
+
+/* .gallery-container img{
+    min-width: 200px;
+} */
