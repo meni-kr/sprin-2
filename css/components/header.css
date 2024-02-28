@@ -1,3 +1,24 @@
-header{
-    background-color: aqua;
-  }
+.main-header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background-color: aqua;
+}
+
+.logo{
+  flex-grow: 1;
+  font-size: 2.5em;
+  align-self: center;
+
+}
+
+.main-nav-list a{
+  padding: 50px 30px;
+  font-size: 1.5em;
+  align-items: center;
+  justify-items: center;
+
+}
+.main-nav-list a:hover{
+  color: rgb(52, 206, 32);
+
+}

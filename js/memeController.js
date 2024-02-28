@@ -29,8 +29,6 @@ function renderMeme() {
     
 }
 
-
-
 function drawText(text, x, y) {
     gCtx.beginPath()
     gCtx.lineWidth = 2
@@ -44,4 +42,9 @@ function drawText(text, x, y) {
 
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
+}
+
+function onChangeText(txt){
+    ChangeText(txt)
+    renderMeme()
 }

@@ -15,3 +15,7 @@ let gMeme = {
 function getMeme(){
     return gMeme
 }
+
+function ChangeText(txt){
+    return gMeme.lines[0].txt = txt
+}

@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>meme generator</title>
 </head>
 
-<body onload="onInit()">
-    <header>
+<body onload="onInit()" class="main-layout">
+
+    <header class="main-header flex">
         <div class="logo">Logo</div>
         <nav class="main-nav">
-            <ul>
+            <ul class="main-nav-list flex space-between clean-list">
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Memes</a></li>
                 <li><a href="#">About</a></li>
@@ -27,11 +28,19 @@
         </div>
     </main>
 
-    <main class="meme-editor-container">
+    <main class="meme-editor-container flex">
+
         <div class="canvas-container">
             <canvas height="400" width="400"></canvas>
         </div>
-        <section class="editor"></section>
+
+        <section class="editor-container">
+            
+                
+                <input type="text" oninput="onChangeText(this.value)" id="search" name="search" placeholder="search" />
+            
+            
+        </section>
     </main>
 
 
