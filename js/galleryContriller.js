@@ -19,8 +19,15 @@ function renderGallery() {
     const elMainImgContainer = document.querySelector('.gallery-container')
     
     let strHtmls = gImgs.map(img =>`
-    <img src="${img.url}" alt="${img.keywords}" title="${img.keywords}">    
+    <img id="${img.id}" src="${img.url}" alt="${img.keywords}" title="${img.keywords}" onclick="onImgSelect(this)">    
     `)
 
     elMainImgContainer.innerHTML = strHtmls.join('')
+}
+
+function onImgSelect({id}){
+    setImg(id)
+    const elMainImgContainer = document.querySelector('.gallery-container')
+    elMainImgContainer.style.display = 'none'
+    renderMeme()
 }

@@ -1,6 +1,6 @@
 .meme-editor-container{
     display: none;
-    background-color: bisque;
+    
 }
 
 canvas {
@@ -10,9 +10,6 @@ canvas {
 
 .canvas-container{
     width: fit-content;
-    background-color: cadetblue;
+    
 }
 
-.editor{
-    background-color: burlywood;
-}

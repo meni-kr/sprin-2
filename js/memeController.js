@@ -11,6 +11,9 @@ let gCtx= gElCanvas.getContext('2d')
 
 
 function renderMeme() {
+    const elMemeEditorContainer = document.querySelector('.meme-editor-container')
+    elMemeEditorContainer.style.display = 'flex'
+
     let meme = getMeme()
     const elImg = new Image()
     elImg.src = `img/${meme.selectedImgId}.jpg`
