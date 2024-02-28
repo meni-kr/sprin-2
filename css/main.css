@@ -2,7 +2,7 @@
 
     /* @import url(basics/base.css); */
     @import url(basics/helpers.css);
-    /* @import url(basics/layout.css); */
+    @import url(basics/layout.css);
     
     
     /* setup */
@@ -12,7 +12,7 @@
     
     /* components */
 
-    /* @import url(components/header.css); */
+    @import url(components/header.css);
     /* @import url(components/card.css); */
-    /* @import url(components/page_nav.css); */
+    @import url(components/memeEditor.css);
     /* @import url(components/footer.css); */

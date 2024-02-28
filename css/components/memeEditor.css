@@ -1,0 +1,17 @@
+.meme-editor-container{
+    background-color: bisque;
+}
+
+canvas {
+    display: block;
+    
+}
+
+.canvas-container{
+    width: fit-content;
+    background-color: cadetblue;
+}
+
+.editor{
+    background-color: burlywood;
+}
