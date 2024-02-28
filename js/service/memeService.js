@@ -7,7 +7,7 @@ let gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'red'
+            color: '#ffffff'
         }
     ]
 }
@@ -16,8 +16,12 @@ function getMeme(){
     return gMeme
 }
 
-function ChangeText(txt){
-    return gMeme.lines[0].txt = txt
+function changeText(txt){
+    return gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}
+
+function changeColor(color){
+    gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
 function setImg(imgId){

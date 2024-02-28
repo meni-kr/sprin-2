@@ -19,29 +19,35 @@ function renderMeme() {
     elImg.src = `img/${meme.selectedImgId}.jpg`
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(meme.lines[meme.selectedLineIdx].txt,200,200)
+        drawText(meme,200,200)
     }
-    
-    
-    
 }
 
-function drawText(text, x, y) {
+function drawText(meme, x, y) {
+    
     gCtx.beginPath()
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'orange'
-
-    
+    gCtx.strokeStyle = `${meme.lines[meme.selectedLineIdx].color}`
 
     gCtx.font = '35px Arial'
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
+    gCtx.fillText(meme.lines[meme.selectedLineIdx].txt, x, y)
+    gCtx.strokeText(meme.lines[meme.selectedLineIdx].txt, x, y)
 }
 
 function onChangeText(txt){
-    ChangeText(txt)
+    changeText(txt)
     renderMeme()
+}
+
+function onChangeColor(color){
+    changeColor(color)
+    renderMeme()
+}
+
+function downloadImg(elLink) {
+    const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
+    elLink.href = imgContent
 }
