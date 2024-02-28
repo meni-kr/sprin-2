@@ -8,12 +8,8 @@ let gImgs = [
 ]
 
 function onInit() {
-
     renderGallery()
-
-
 }
-
 
 function renderGallery() {
     const elMainImgContainer = document.querySelector('.gallery-container')

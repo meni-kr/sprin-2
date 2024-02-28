@@ -9,22 +9,55 @@ let gMeme = {
             size: 20,
             color: '#ffffff'
         }
+
     ]
 }
 
-function getMeme(){
+function getMeme() {
     return gMeme
 }
 
-function changeText(txt){
+function changeText(txt) {
     return gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
-function changeColor(color){
+function changeColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
-function setImg(imgId){
+function setImg(imgId) {
     gMeme.selectedImgId = imgId
     gMeme.selectedLineIdx = 0
+    gMeme.lines[gMeme.selectedLineIdx].size = 35
+}
+
+function increaseFont() {
+    gMeme.lines[gMeme.selectedLineIdx].size++
+}
+
+function decreaseFont() {
+    gMeme.lines[gMeme.selectedLineIdx].size--
+}
+
+function addLine() {
+    
+    if(gMeme.lines.length>1) return
+    
+    gMeme.lines.push(
+        {
+            txt: 'I sometimes',
+            size: 20,
+            color: '#ffffff'
+        }
+        )
+        
+}
+
+function switchLine() {
+    if(gMeme.lines.length===1) return
+    if (!gMeme.selectedLineIdx) gMeme.selectedLineIdx = 1
+    else gMeme.selectedLineIdx = 0
+    
+    return gMeme.lines[gMeme.selectedLineIdx].txt
+
 }
