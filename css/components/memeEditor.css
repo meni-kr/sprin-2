@@ -13,3 +13,9 @@ canvas {
     
 }
 
+.editor-container{
+    flex-flow: column;
+    gap: 10px;
+    align-items: center;
+}
+

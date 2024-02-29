@@ -12,16 +12,14 @@
 
     <header class="main-header flex">
         <div class="logo">Logo</div>
-        <nav class="main-nav">
-            <ul class="main-nav-list flex space-between clean-list">
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Memes</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
+        <nav class="main-nav flex space-around">
+            <button class="btn nav-btn">Gallery</button>
+            <button class="btn nav-btn">Memes</button>
+            <button class="btn nav-btn">About</button>
         </nav>
     </header>
 
-    <main class="gallery-container">
+    <main class="gallery-container flex">
 
     </main>
 
@@ -31,7 +29,7 @@
             <canvas height="400" width="400" onclick="onMouseDown(event)"></canvas>
         </div>
 
-        <section class="editor-container">
+        <section class="editor-container flex">
 
             <input type="text" oninput="onChangeText(this.value)" id="search" name="search" placeholder="search" />
 

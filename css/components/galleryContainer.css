@@ -1,15 +1,13 @@
 .gallery-container{
-    /* border: 3px solid black; */
     grid-column: 1 / -1 ;
-    background-color: rgb(137, 167, 158);
-    display: flex;
     flex-wrap: wrap;
-    
+    gap: 10px;
+    margin: auto;
 }
 
 
 
 
-/* .gallery-container img{
-    min-width: 200px;
-} */
+.gallery-container img{
+    width: 200px;
+}
