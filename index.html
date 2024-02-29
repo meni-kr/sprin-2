@@ -21,6 +21,18 @@
 
     <main class="main-gallery-container">
         <button class="btn btn-delete-line" onclick="onFlexibleBtn()">i'm flexible</button>
+
+        <input list="filter" oninput="onInputSearch(this.value)" placeholder="filter by...">
+
+        <datalist id="filter">
+            <option value="funny">
+            <option value="dog">
+            <option value="cat">
+            <option value="baby">
+            <option value="kiss">
+        </datalist>
+        
+
         <main class="gallery-container flex">
 
         </main>

@@ -57,3 +57,19 @@ function onGalleryClick(){
     const elSavedMemeContainer = document.querySelector('.main-saved-memes-container')
     elSavedMemeContainer.style.display = 'none'
 }
+
+function onInputSearch(value){
+    const elMainImgContainer = document.querySelector('.gallery-container')
+    const filtedImg = filter(value)
+
+    let strHtmls = filtedImg.map(img =>`
+    <img id="${img.id}" src="${img.url}" alt="${img.keywords}" title="${img.keywords}" onclick="onImgSelect(this)">    
+    `)
+
+    elMainImgContainer.innerHTML = strHtmls.join('')
+}
+
+function filter(value){
+    return gImgs.filter(img =>
+        img.keywords[0].includes(value) || img.keywords[1].includes(value))
+}
