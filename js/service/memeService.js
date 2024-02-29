@@ -7,7 +7,12 @@ let gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: '#ffffff'
+            color: '#ffffff',
+            x: 10,
+            y:40,
+            txtLength:0,
+            lindID:0
+
         }
 
     ]
@@ -47,7 +52,11 @@ function addLine() {
         {
             txt: 'I sometimes',
             size: 20,
-            color: '#ffffff'
+            color: '#ffffff',
+            x: 10,
+            y:250,
+            txtLength:0,
+            lindID:1
         }
         )
         
