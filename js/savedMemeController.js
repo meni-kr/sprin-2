@@ -12,10 +12,6 @@ function onSavedMemesClick(){
     renderSavedMemes()
 }
 
-function renderSavedMemes(){
-    
-}
-
 function renderSavedMemes() {
     const savedMemes = loadFromStorage('saved-memes')
     const elMainImgContainer = document.querySelector('.saved-memes-container')
@@ -23,6 +19,5 @@ function renderSavedMemes() {
     let strHtmls = savedMemes.map(meme =>`
     <img id="${meme.selectedImgId}" src="/img/${meme.selectedImgId}.jpg" onclick="onImgEditSelect(this)">   
     `)
-
     elMainImgContainer.innerHTML = strHtmls.join('')
 }

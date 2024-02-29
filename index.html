@@ -20,17 +20,19 @@
     </header>
 
     <main class="main-gallery-container">
+        <section class="main-gallery-header">
+
         <button class="btn btn-delete-line" onclick="onFlexibleBtn()">i'm flexible</button>
-
         <input list="filter" oninput="onInputSearch(this.value)" placeholder="filter by...">
-
         <datalist id="filter">
             <option value="funny">
             <option value="dog">
             <option value="cat">
             <option value="baby">
             <option value="kiss">
-        </datalist>
+        </datalist>    
+        </section>
+        
         
 
         <main class="gallery-container flex">
@@ -88,8 +90,7 @@
 
         </div>
     </main>
-
-
+    
     <script src="js/service/util.js"></script>
     <script src="js/service/storage.js"></script>
     <script src="js/service/memeService.js"></script>

@@ -1,12 +1,9 @@
 'use strict'
 
-
-
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 let gElCanvas = document.querySelector('canvas')
 let gCtx = gElCanvas.getContext('2d')
-
 
 function renderMeme() {
     const elSavedMemeContainer = document.querySelector('.main-saved-memes-container')
@@ -14,14 +11,10 @@ function renderMeme() {
     const elMemeEditorContainer = document.querySelector('.meme-editor-container')
     elMemeEditorContainer.style.display = 'flex'
     
-
     let meme = getMeme()
 
     meme.lines[0].txtLength = gCtx.measureText(`${meme.lines[0].txt}`).width
     if (meme.lines.length > 1) meme.lines[1].txtLength = gCtx.measureText(`${meme.lines[1].txt}`).width
-
-
-
 
     const elImg = new Image()
     elImg.src = `img/${meme.selectedImgId}.jpg`
@@ -30,11 +23,9 @@ function renderMeme() {
         drawText(meme)
         if (!meme.selectedLineIdx) {
             let line = meme.lines[0]
-
             if (line.textAlign === 'left' && !line.isDeleted ) gCtx.strokeRect(line.x, line.y - line.size, line.txtLength, line.y)
             if (line.textAlign === 'right' && !line.isDeleted) gCtx.strokeRect(line.x - line.txtLength, line.y - line.size, line.txtLength, line.y)
             if (line.textAlign === 'center' && !line.isDeleted) gCtx.strokeRect(line.x - line.txtLength / 2, line.y - line.size, line.txtLength, line.y)
-
         } else if (meme.selectedLineIdx) {
             let line = meme.lines[1]
             if (line.textAlign === 'left' && !line.isDeleted) gCtx.strokeRect(line.x, line.y - line.size, line.txtLength, line.size)
@@ -60,7 +51,6 @@ function drawText(meme) {
     gCtx.closePath()  
     }
     
-
     if (!meme.lines[1].isDeleted) {
 
         gCtx.lineWidth = 2
@@ -73,7 +63,6 @@ function drawText(meme) {
         gCtx.strokeText(meme.lines[1].txt, meme.lines[1].x, meme.lines[1].y)
 
         gCtx.closePath()
-
     }
 }
 
@@ -121,8 +110,7 @@ function onMouseDown(ev) {
     if (meme.lines.length > 1) {
         meme.lines[1].txtLength = gCtx.measureText(`${meme.lines[1].txt}`).width
     }
-    var { offsetX, offsetY, clientX, clientY } = ev
-
+    var { offsetX, offsetY} = ev
 
     if (line.textAlign === 'left') {
         var txtLengthStart = 0
@@ -137,13 +125,11 @@ function onMouseDown(ev) {
         var txtLengthEnd = line.txtLength / 2
     }
 
-
     const hoveredStar = meme.lines.find(line => {
         const { x, y, size } = line
         return offsetX >= x - txtLengthStart && offsetX <= x + txtLengthEnd &&
             offsetY <= y && offsetY >= y - size
     })
-
 
     if (hoveredStar) {
         if (meme.selectedLineIdx === hoveredStar.lindID) return
@@ -180,28 +166,19 @@ function onSaveMemeBtn(){
     saveMene()
 }
 
-
 function onUploadImg() {
-    
     const imgDataUrl = gElCanvas.toDataURL('image/jpeg') 
-
     function onSuccess(uploadedImgUrl) {
-        
         const url = encodeURIComponent(uploadedImgUrl)
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${url}`)
     }
-    
-    
     doUploadImg(imgDataUrl, onSuccess)
 }
-
-
 
 function doUploadImg(imgDataUrl, onSuccess) {
     
     const formData = new FormData()
     formData.append('img', imgDataUrl)
-
     
     const XHR = new XMLHttpRequest()
     XHR.onreadystatechange = () => {

@@ -31,7 +31,6 @@ function renderGallery() {
     let strHtmls = gImgs.map(img =>`
     <img id="${img.id}" src="${img.url}" alt="${img.keywords}" title="${img.keywords}" onclick="onImgSelect(this)">    
     `)
-
     elMainImgContainer.innerHTML = strHtmls.join('')
 }
 
@@ -65,7 +64,6 @@ function onInputSearch(value){
     let strHtmls = filtedImg.map(img =>`
     <img id="${img.id}" src="${img.url}" alt="${img.keywords}" title="${img.keywords}" onclick="onImgSelect(this)">    
     `)
-
     elMainImgContainer.innerHTML = strHtmls.join('')
 }
 

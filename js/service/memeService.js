@@ -21,7 +21,6 @@ let gMeme = {
             txtLength: 0,
             lindID: 0,
             isDeleted: false
-
         },
         {
             txt: 'sometimes',
@@ -59,7 +58,6 @@ function setImg(imgId) {
     gMeme.lines[gMeme.selectedLineIdx].size = 35
     gMeme.lines[gMeme.selectedLineIdx].font = 'Impact'
     gMeme.lines[gMeme.selectedLineIdx].textAlign = 'center'
-
 }
 
 function increaseFont() {
@@ -71,7 +69,6 @@ function decreaseFont() {
 }
 
 function addLine() {
-
     if (!gMeme.lines[0].isDeleted && gMeme.lines[1].isDeleted) {
         gMeme.lines[1].isDeleted = false
     }else if(gMeme.lines[0].isDeleted && !gMeme.lines[1].isDeleted){
@@ -79,14 +76,13 @@ function addLine() {
     }else if(gMeme.lines[0].isDeleted && gMeme.lines[1].isDeleted){
         gMeme.lines[0].isDeleted = false
     }
- 
 }
 
 function switchLine() {
     if (gMeme.lines.length === 1) return
     if (!gMeme.selectedLineIdx) gMeme.selectedLineIdx = 1
     else gMeme.selectedLineIdx = 0
-
+    
     return gMeme.lines[gMeme.selectedLineIdx].txt
 }
 
@@ -112,6 +108,5 @@ function deleteLine() {
 
 function saveMene(){
     gMemes.push(gMeme)
-
     saveToStorage(STORAGE_KEY,gMemes )
 }
