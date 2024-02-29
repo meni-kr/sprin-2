@@ -1,5 +1,9 @@
 'use strict'
 
+const STORAGE_KEY = 'saved-memes'
+
+const gMemes = []
+
 let gMeme = {
     selectedImgId: 7,
     selectedLineIdx: 0,
@@ -104,4 +108,10 @@ function moveDown() {
 
 function deleteLine() {
     gMeme.lines[gMeme.selectedLineIdx].isDeleted = true
+}
+
+function saveMene(){
+    gMemes.push(gMeme)
+
+    saveToStorage(STORAGE_KEY,gMemes )
 }

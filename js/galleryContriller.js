@@ -48,3 +48,12 @@ function onFlexibleBtn(){
     elMainImgContainer.style.display = 'none'
     renderMeme()
 }
+
+function onGalleryClick(){
+    const elMainImgContainer = document.querySelector('.main-gallery-container')
+    elMainImgContainer.style.display = 'block'
+    const elMemeEditorContainer = document.querySelector('.meme-editor-container')
+    elMemeEditorContainer.style.display = 'none'
+    const elSavedMemeContainer = document.querySelector('.main-saved-memes-container')
+    elSavedMemeContainer.style.display = 'none'
+}

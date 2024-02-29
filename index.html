@@ -13,8 +13,8 @@
     <header class="main-header flex">
         <div class="logo">Logo</div>
         <nav class="main-nav flex space-around">
-            <button class="btn nav-btn">Gallery</button>
-            <button class="btn nav-btn">Memes</button>
+            <button class="btn nav-btn" onclick="onGalleryClick()">Gallery</button>
+            <button class="btn nav-btn" onclick="onSavedMemesClick()">Savd memes</button>
             <button class="btn nav-btn">About</button>
         </nav>
     </header>
@@ -22,7 +22,7 @@
     <main class="main-gallery-container">
         <button class="btn btn-delete-line" onclick="onFlexibleBtn()">i'm flexible</button>
         <main class="gallery-container flex">
-    
+
         </main>
     </main>
 
@@ -34,10 +34,12 @@
 
         <section class="editor-container flex">
 
-            <input type="text" oninput="onChangeText(this.value)" id="search" name="search" placeholder="whats up doc" />
+            <input type="text" oninput="onChangeText(this.value)" id="search" name="search"
+                placeholder="whats up doc" />
 
             <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download img</a>
-            <input type="color" id="color" name="color" form="frmRegister" value="#000000" id="color" oninput="onChangeColor(this.value)" />
+            <input type="color" id="color" name="color" form="frmRegister" value="#000000" id="color"
+                oninput="onChangeColor(this.value)" />
 
             <select class="font-list" onchange="onSetFont(this.value)">
                 <option value="">font</option>
@@ -47,7 +49,7 @@
                 <option>cursive</option>
                 <option>fantasy</option>
                 <option>system-ui</option>
-                
+
             </select>
             <select class="text-align-list" onchange="onAlignText(this.value)">
                 <option value="">align</option>
@@ -63,16 +65,22 @@
             <button class="btn btn-move-up" onclick="onMoveUpBtn()">⬆️</button>
             <button class="btn btn-move-down" onclick="onMoveDownBtn()">⬇️</button>
             <button class="btn btn-delete-line" onclick="onDeleteLineBtn()">Delete line</button>
-
+            <button class="btn btn-save-meme" onclick="onSaveMemeBtn()">save meme</button>
 
         </section>
     </main>
 
+    <main class="main-saved-memes-container">
+        <div class="saved-memes-container">
 
+        </div>
+    </main>
 
 
     <script src="js/service/util.js"></script>
+    <script src="js/service/storage.js"></script>
     <script src="js/service/memeService.js"></script>
+    <script src="js/savedMemeController.js"></script>
     <script src="js/memeController.js"></script>
     <script src="js/galleryContriller.js"></script>
 </body>

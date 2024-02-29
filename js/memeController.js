@@ -9,8 +9,11 @@ let gCtx = gElCanvas.getContext('2d')
 
 
 function renderMeme() {
+    const elSavedMemeContainer = document.querySelector('.main-saved-memes-container')
+    elSavedMemeContainer.style.display = 'none'
     const elMemeEditorContainer = document.querySelector('.meme-editor-container')
     elMemeEditorContainer.style.display = 'flex'
+    
 
     let meme = getMeme()
 
@@ -173,3 +176,6 @@ function onDeleteLineBtn(){
     renderMeme()
 }
 
+function onSaveMemeBtn(){
+    saveMene()
+}
