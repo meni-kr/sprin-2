@@ -6,16 +6,32 @@ let gMeme = {
     lines: [
         {
             txt: 'eat Falafel',
-            font:'Impact',
+            font: 'Impact',
             size: 20,
             colorStroke: '#ffffff',
             colorFill: '#000000',
             textAlign: 'center',
+            pos: { x: 200, y: 40 },
             x: 200,
-            y:40,
-            txtLength:0,
-            lindID:0
+            y: 40,
+            txtLength: 0,
+            lindID: 0,
+            isDeleted: false
 
+        },
+        {
+            txt: 'sometimes',
+            font: 'Impact',
+            size: 20,
+            colorStroke: '#ffffff',
+            colorFill: '#000000',
+            textAlign: 'center',
+            pos: { x: 200, y: 350 },
+            x: 200,
+            y: 350,
+            txtLength: 0,
+            lindID: 1,
+            isDeleted: true
         }
 
     ]
@@ -39,6 +55,7 @@ function setImg(imgId) {
     gMeme.lines[gMeme.selectedLineIdx].size = 35
     gMeme.lines[gMeme.selectedLineIdx].font = 'Impact'
     gMeme.lines[gMeme.selectedLineIdx].textAlign = 'center'
+
 }
 
 function increaseFont() {
@@ -50,41 +67,57 @@ function decreaseFont() {
 }
 
 function addLine() {
-    
-    if(gMeme.lines.length>1) return
-    
-    gMeme.lines.push(
-        {
-            txt: 'sometimes',
-            font:'Impact',
-            size: 20,
-            colorStroke: '#ffffff',
-            colorFill: '#000000',
-            textAlign: 'center',
-            x: 200,
-            y:350,
-            txtLength:0,
-            lindID:1
-        }
-        )
-        
+
+    if (!gMeme.lines[0].isDeleted && gMeme.lines[1].isDeleted) {
+        gMeme.lines[1].isDeleted = false
+    }else if(gMeme.lines[0].isDeleted && !gMeme.lines[1].isDeleted){
+        gMeme.lines[0].isDeleted = false
+    }else if(gMeme.lines[0].isDeleted && gMeme.lines[1].isDeleted){
+        gMeme.lines[0].isDeleted = false
+    }
+
+    // gMeme.lines.push(
+    //     {
+    //         txt: 'sometimes',
+    //         font:'Impact',
+    //         size: 20,
+    //         colorStroke: '#ffffff',
+    //         colorFill: '#000000',
+    //         textAlign: 'center',
+    //         pos:{x:200,y:350},
+    //         x: 200,
+    //         y:350,
+    //         txtLength:0,
+    //         lindID:1,
+    //         isDeleted:false
+    //     }
+    //     )  
 }
 
 function switchLine() {
-    if(gMeme.lines.length===1) return
+    if (gMeme.lines.length === 1) return
     if (!gMeme.selectedLineIdx) gMeme.selectedLineIdx = 1
     else gMeme.selectedLineIdx = 0
-    
-    return gMeme.lines[gMeme.selectedLineIdx].txt
 
+    return gMeme.lines[gMeme.selectedLineIdx].txt
 }
 
-function setFont(font){
+function setFont(font) {
     gMeme.lines[gMeme.selectedLineIdx].font = font
 }
 
-function alignText(value){
-    
+function alignText(value) {
     gMeme.lines[gMeme.selectedLineIdx].textAlign = value
-    
+}
+
+function moveUp() {
+    gMeme.lines[gMeme.selectedLineIdx].y--
+}
+
+function moveDown() {
+    gMeme.lines[gMeme.selectedLineIdx].y++
+}
+
+function deleteLine() {
+    gMeme.lines[gMeme.selectedLineIdx].isDeleted = true
 }
