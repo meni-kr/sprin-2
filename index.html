@@ -26,7 +26,7 @@
     <main class="meme-editor-container flex">
 
         <div class="canvas-container">
-            <canvas height="400" width="400" onclick="onMouseDown(event)"></canvas>
+            <canvas height="400" width="400" onmousedown="onMouseDown(event)"></canvas>
         </div>
 
         <section class="editor-container flex">
@@ -34,7 +34,25 @@
             <input type="text" oninput="onChangeText(this.value)" id="search" name="search" placeholder="search" />
 
             <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download img</a>
-            <input type="color" id="color" name="color" form="frmRegister" value="#ffffff" id="color" oninput="onChangeColor(this.value)" />
+            <input type="color" id="color" name="color" form="frmRegister" value="#000000" id="color" oninput="onChangeColor(this.value)" />
+
+            <select class="font-list" onchange="onSetFont(this.value)">
+                <option value="">font</option>
+                <option>Arial</option>
+                <option>sans-serif</option>
+                <option>monospace</option>
+                <option>cursive</option>
+                <option>fantasy</option>
+                <option>system-ui</option>
+                
+            </select>
+            <select class="text-align-list" onchange="onAlignText(this.value)">
+                <option value="">align</option>
+                <option>left</option>
+                <option>right</option>
+                <option>center</option>
+            </select>
+
             <button class="btn btn-up" onclick="onIncreaseFontBtn()">☝️</button>
             <button class="btn btn-down" onclick="onDecreaseFontBtn()">👇</button>
             <button class="btn btn-down" onclick="onAddLineBtn()">➕</button>
