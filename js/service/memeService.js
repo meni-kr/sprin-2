@@ -75,23 +75,7 @@ function addLine() {
     }else if(gMeme.lines[0].isDeleted && gMeme.lines[1].isDeleted){
         gMeme.lines[0].isDeleted = false
     }
-
-    // gMeme.lines.push(
-    //     {
-    //         txt: 'sometimes',
-    //         font:'Impact',
-    //         size: 20,
-    //         colorStroke: '#ffffff',
-    //         colorFill: '#000000',
-    //         textAlign: 'center',
-    //         pos:{x:200,y:350},
-    //         x: 200,
-    //         y:350,
-    //         txtLength:0,
-    //         lindID:1,
-    //         isDeleted:false
-    //     }
-    //     )  
+ 
 }
 
 function switchLine() {
